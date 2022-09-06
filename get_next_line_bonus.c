@@ -6,7 +6,7 @@
 /*   By: learodri <learodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/06 19:57:36 by learodri          #+#    #+#             */
-/*   Updated: 2022/09/06 20:03:21 by learodri         ###   ########.fr       */
+/*   Updated: 2022/09/06 20:46:09 by learodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,7 +95,7 @@ char	*get_next_line(int fd)
 	char		*line;
 	static char	*memorycard[1024];
 
-	if (fd < 0 || BUFFER_SIZE <= 0)
+	if (fd < 0 || BUFFER_SIZE <= 0 || fd > 1024)
 		return (0);
 	memorycard[fd] = readuntillinebr(fd, memorycard[fd]);
 	if (!memorycard[fd])
