@@ -6,7 +6,7 @@
 /*   By: learodri <learodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/05 21:33:23 by learodri          #+#    #+#             */
-/*   Updated: 2022/09/05 23:05:15 by learodri         ###   ########.fr       */
+/*   Updated: 2022/09/06 19:25:41 by learodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,6 +78,7 @@ char	*readuntillinebr(int fd, char *memorycard)
 	while (!ft_strchr(memorycard, '\n') && byte_check != 0)
 	{
 		byte_check = read(fd, buff, BUFFER_SIZE);
+		if (byte_check == -1)
 		{
 			free(buff);
 			return (NULL);
